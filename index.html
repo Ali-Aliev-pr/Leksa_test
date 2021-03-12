@@ -41,65 +41,25 @@
     <h1>Weather cards</h1>
     <div id="cards"></div>
     <script type="text/babel">
-        class Card_one extends React.Component{
+        class Card extends React.Component{
             render(){
                 return(<div className='card'>
                 <img src="icon.png" alt='Text'/>
                 <div className='card-text'>
-                    <h2>Morning</h2>
-                    <p  className='Possible precipitation'>Вероятность осадков: 80%</p>
-                    <h4 className='Temperature'>-4 Degrees</h4>    
+                    <h2>{this.props.day_time}</h2>
+                    <p  className='Possible precipitation'>{this.props.osadki}</p>
+                    <h4 className='Temperature'>{this.props.Degrees}</h4>    
                 </div>
             </div>)
             }
         }
-
-        class Card_two extends React.Component{
-            render(){
-                return(<div className='card'>
-                <img src="icon.png" alt='Text'/>
-                <div className='card-text'>
-                    <h2>Day</h2>
-                    <p  className='Possible precipitation'>Вероятность осадков: 50%</p>
-                    <h4 className='Temperature'>-7 Degrees</h4>    
-                </div>
-            </div>)
-            }
-        }
-
-        class Card_three extends React.Component{
-            render(){
-                return(<div className='card'>
-                <img src="icon.png" alt='Text'/>
-                <div className='card-text'>
-                    <h2>Evening</h2>
-                    <p  className='Possible precipitation'>Вероятность осадков: 100%</p>
-                    <h4 className='Temperature'>-15 Degrees</h4>    
-                </div>
-            </div>)
-            }
-        }
-
-        class Card_four extends React.Component{
-            render(){
-                return(<div className='card'>
-                <img src="icon.png" alt='Text'/>
-                <div className='card-text'>
-                    <h2>Night</h2>
-                    <p  className='Possible precipitation'>Вероятность осадков: 40%</p>
-                    <h4 className='Temperature'>-25 Degrees</h4>    
-                </div>
-            </div>)
-            }
-        }
-
 
         ReactDOM.render(
             <div>
-                <Card_one/>
-                <Card_two/> 
-                <Card_three/>
-                <Card_four/>   
+                <Card day_time='Morning' osadki='Вероятность осадков: 80%' Degrees='-4 Degrees'/>
+                <Card day_time='Day' osadki='Вероятность осадков: 50%' Degrees='-16 Degrees'/>
+                <Card day_time='Evening' osadki='Вероятность осадков: 99%' Degrees='-20 Degrees'/>
+                <Card day_time='Night' osadki='Вероятность осадков: 30%' Degrees='-30 Degrees'/>
             </div>,
             document.getElementById('cards')
         )
